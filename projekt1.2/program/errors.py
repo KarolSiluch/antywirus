@@ -1,2 +1,0 @@
-class NotADirError(Exception):
-    pass
