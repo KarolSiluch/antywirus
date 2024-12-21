@@ -1,0 +1,29 @@
+name: plik.txt
+path: /home/pipr/pipr/projekt1.2/test/plik.txt
+status: Indian technical support!!
+hash: 44d88612fea8a8f36de82e1278abb02f
+
+name: index.txt
+path: /home/pipr/pipr/projekt1.2/test/index.txt
+status: Safe
+hash: 1d61da5131776b5a1b52a096aa09871b
+
+name: folder.zip
+path: /home/pipr/pipr/projekt1.2/test/folder.zip
+status: Safe
+hash: 4fae1a0e04407498662a9a1d0a3f90a7
+
+name: praca_domowa.txt
+path: /home/pipr/pipr/projekt1.2/test/folder/praca_domowa.txt
+status: Safe
+hash: e1c226f5fbd392d7affab061f4527163
+
+name: judasz_wirus.com
+path: /home/pipr/pipr/projekt1.2/test/folder/judasz_wirus.com
+status: Indian technical support!!
+hash: 44d88612fea8a8f36de82e1278abb02f
+
+name: jezus_wirus.json
+path: /home/pipr/pipr/projekt1.2/test/folder/jezus_wirus.json
+status: Safe
+hash: d41d8cd98f00b204e9800998ecf8427asdsa
