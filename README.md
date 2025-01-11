@@ -3,7 +3,12 @@ Autor: Karol Siłuch
 Projekt: Antywirus
 Program skanujący pliki w wybranym folderze, ostrzegający przed potęcialnym zagrożeniem.
 Wykrywa podejżane pliki i pozwala je usuną.
-Antywirus wykrywa testowego wisrusa EICAR.
+Antywirus porównuje zawartość pliku z bazą wirusów w pliku virus_database.json.
+Porównywanie działa na podstawie porównywania zahashowanej zawartości pliku z zahashowanym wirusem.
+
+Przykład:
+dodając do listy w pliku virus_database.json napis '68de3d88c0efb98603398d148882b847' = md5('wirus')
+program będzie wykrywał wszyskie pliki z zawartością 'wirus' jako podejrzane.
 
 
 Podział na klasy:
@@ -41,6 +46,15 @@ indexu, należy wykożystać obiekt kalsy FastScanner
 
 -Usuwanie zainfekowanych plików:
 Należy stworzyć obiekt klasy Antywirus, podając ścieżkę do wybranego folderu i wywołać metodę repair_catalog.
+
+-Cykliczny skan:
+Należy stworzyć obiekt klasy Antywirus, podając ścieżkę do wybranego folderu i wywołać metodę cyclic_scan i podać czas
+w sekundach między poszczególnym skanem i ilość skanów do wykonania.
+
+
+Część refleksyjna:
+Aby wykonać projekt, musiałem przeczytać wiele artykułów na temat działania antywirusów. Na początku miałem w planach stworzyć katalog z drzewiastą struktórą plików, zdecydowałem się na słownik, w którym kluczem jest ścieżka a zawartością plik, aby w wygodny sposób kożystać z wbudowanych funkcji pythona.
+
 
 
 

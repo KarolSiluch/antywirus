@@ -18,5 +18,5 @@ def test_status_json():
 
 def test_str():
     file = File('święta.txt', '44d88612fea8a8f36de82e1278abb02f')
-    text = 'name: święta.txt\nstatus: Indian technical support!!\nhash: 44d88612fea8a8f36de82e1278abb02f'
+    text = 'name: święta.txt\nstatus: Suspicious File!!\nhash: 44d88612fea8a8f36de82e1278abb02f'
     assert str(file) == text

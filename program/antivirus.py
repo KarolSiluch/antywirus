@@ -2,6 +2,7 @@ from pathlib import Path
 import program.errors as errors
 from program.fast_scanner import FastScanner, Scanner
 import json
+from time import sleep
 
 
 class Antivirus:
@@ -44,6 +45,13 @@ class Antivirus:
         '''wypisuje informacje o wszystkich plikach wybranym folderze'''
         print(self.get_catalog_of_all_files())
 
+    def cyclic_scan(self, time: int, counter: int):
+        '''cykliczny skan, trzeba podać czas między skanami i ile skanów należy wykonać'''
+        for _ in range(counter):
+            sleep(time)
+            self.fast_scan()
+            self.update_index()
+
     def repair_catalog(self):
         '''pozwala na usunięcie podejrzanych plików'''
         for path, file in self.get_catalog_of_all_files():
@@ -54,4 +62,4 @@ class Antivirus:
                 continue
             file_path = Path(path)
             file_path.unlink()
-            print('file has been succesfuly removed')
+            print('The file has been succesfuly removed')

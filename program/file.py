@@ -1,3 +1,7 @@
+from pathlib import Path
+import json
+
+
 class File:
     def __init__(self, name: str, hash: str):
         self._name = name
@@ -18,8 +22,9 @@ class File:
 
     def scan(self):
         '''True -> virus    False -> not a virus'''
-        status = self._hash in {'44d88612fea8a8f36de82e1278abb02f'}
-        return status
+        with Path('program/virus_database.json').open() as file:
+            viruses = json.load(file)
+            return True if self._hash in viruses else False
 
     def json(self):
         return {
@@ -28,7 +33,7 @@ class File:
             'hash': self._hash}
 
     def __str__(self):
-        file = self.json()
-        file['status'] = 'Indian technical support!!' if file['status'] else 'Safe'
-        text = '\n'.join(f'{title}: {content}' for title, content in file.items())
+        file_data = self.json()
+        file_data['status'] = 'Suspicious File!!' if file_data['status'] else 'Safe'
+        text = '\n'.join(f'{title}: {content}' for title, content in file_data.items())
         return text

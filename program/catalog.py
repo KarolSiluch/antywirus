@@ -2,7 +2,7 @@ from program.file import File
 
 
 class Catalog:
-    def __init__(self, name: str, files: dict[File] = None):
+    def __init__(self, name: str, files: dict[str, File] | None = None):
         self._name = name
         self._files = files if files else {}
 
@@ -10,7 +10,7 @@ class Catalog:
     def files(self):
         return self._files
 
-    def add_file(self, file: File, parent_catalog: str = None):
+    def add_file(self, file: File, parent_catalog: str | None = None):
         '''dodawanie plików do katalogu na podstawie ścieżki'''
         key = parent_catalog if parent_catalog else self._name
         key = f'{key}/{file.name}'
